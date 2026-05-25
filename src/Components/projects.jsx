@@ -9,7 +9,7 @@ export function Projects() {
         "A web app that promotes environmental cleanliness and lets users book sanitation services like fumigation, waste removal, and deep cleaning — all in one place.",
       tags: ["HTML", "CSS", "JavaScript", "Booking UI"],
       github: "https://github.com/4krang-ui/MaxiClean-Services/tree/main",
-      live: null,
+      live: "https://maxi-clean-services.vercel.app/",
     },
   ];
 
