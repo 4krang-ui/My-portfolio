@@ -1,0 +1,174 @@
+/* ─── IMPORT FONTS ──────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Mono:wght@400;500&display=swap");
+
+/* ─── TOKENS ────────────────────────────────────────────────── */
+:root {
+  --accent:       #1d9e75;
+  --accent-light: #e1f5ee;
+  --accent-mid:   #0f6e56;
+  --fg:           #111;
+  --fg2:          #555;
+  --border:       rgba(0, 0, 0, 0.1);
+  --bg2:          #f7f7f5;
+  --radius-lg:    12px;
+  --radius-md:    8px;
+  --font-head:    "Syne", sans-serif;
+  --font-mono:    "DM Mono", monospace;
+}
+
+/* ─── HERO ──────────────────────────────────────────────────── */
+.hero {
+  padding: 2rem 0 3rem;
+  border-bottom: 0.5px solid var(--border);
+  margin-bottom: 3rem;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-mid);
+  background: var(--accent-light);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 1.25rem;
+}
+
+.hero-tag-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+}
+
+.hero-heading {
+  font-family: var(--font-head);
+  font-size: clamp(36px, 6vw, 52px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+  margin-bottom: 1rem;
+}
+
+.hero-accent {
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-family: var(--font-head);
+  font-size: 16px;
+  color: var(--fg2);
+  line-height: 1.7;
+  max-width: 440px;
+  margin-bottom: 1.75rem;
+  font-weight: 400;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn-primary:hover {
+  background: var(--accent-mid);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--fg);
+  border: 0.5px solid rgba(0, 0, 0, 0.25);
+  padding: 10px 22px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn-ghost:hover {
+  background: var(--bg2);
+}
+
+/* ─── SHARED SECTION STYLES ─────────────────────────────────── */
+.section {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.section-title {
+  font-family: var(--font-head);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  margin-bottom: 1.25rem;
+}
+
+/* ─── ABOUT ─────────────────────────────────────────────────── */
+.about-text {
+  font-family: var(--font-head);
+  font-size: 15px;
+  color: var(--fg2);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.about-stat {
+  background: var(--bg2);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+}
+
+.about-stat-num {
+  font-family: var(--font-head);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.about-stat-label {
+  font-family: var(--font-head);
+  font-size: 13px;
+  color: var(--fg2);
+  font-weight: 400;
+}
