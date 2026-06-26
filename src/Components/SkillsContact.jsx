@@ -1,4 +1,3 @@
-
 export function Skills() {
   const skills = [
     "React",
@@ -8,7 +7,8 @@ export function Skills() {
     "GitHub",
     "React Hooks",
     "Responsive Design",
-  
+    "Python",
+    "Java",
   ];
 
   return (
@@ -38,9 +38,19 @@ export function Contact() {
       <div className="contact-card">
         <div>
           <p className="contact-heading">Open to opportunities</p>
-          <p className="contact-sub">Drop me a message or find me on <a href="https://github.com/4krang-ui" target="_blank" rel="noopener noreferrer" className="socials">GitHub</a></p>
+          <p className="contact-sub">
+            Drop me a message or find me on{" "}
+            <a
+              href="https://github.com/4krang-ui"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="socials"
+            >
+              GitHub
+            </a>
+          </p>
         </div>
-        <a href="mailto:maxwellakuamooah076@gmail.com" className="btn-primary">
+        <a href="mailto:maxwellakuamoah076@gmail.com" className="btn-primary">
           Send an email ↗
         </a>
       </div>

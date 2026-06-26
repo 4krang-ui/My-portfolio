@@ -34,12 +34,22 @@ export function Projects() {
             {(project.github || project.live) && (
               <div className="project-links">
                 {project.github && (
-                  <a href={project.github} className="project-link" target="_blank" rel="noreferrer">
+                  <a
+                    href={project.github}
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     GitHub ↗
                   </a>
                 )}
                 {project.live && (
-                  <a href={project.live} className="project-link" target="_blank" rel="noreferrer">
+                  <a
+                    href={project.live}
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Live demo ↗
                   </a>
                 )}
@@ -47,12 +57,13 @@ export function Projects() {
             )}
           </div>
         ))}
-    
 
- {/* ── Placeholder card — replace with your next project ── */}
+        {/* ── Placeholder card — replace with your next project ── */}
         <div className="project-card project-card--empty">
           <div className="project-empty-icon">+</div>
-          <h3 className="project-name" style={{ color: "var(--fg2)" }}>Next project</h3>
+          <h3 className="project-name" style={{ color: "var(--fg2)" }}>
+            Next project
+          </h3>
           <p className="project-desc">
             {" "}
             <code>Anticipate!</code>
