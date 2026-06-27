@@ -1,14 +1,17 @@
+import { MoveUpRight } from "lucide-react";
 export function Skills() {
   const skills = [
     "React",
+    "Typescript",
     "JavaScript",
     "HTML",
     "CSS",
     "GitHub",
-    "React Hooks",
     "Responsive Design",
     "Python",
     "Java",
+    "C++",
+    "Backend Development",
   ];
 
   return (
@@ -51,7 +54,7 @@ export function Contact() {
           </p>
         </div>
         <a href="mailto:maxwellakuamoah076@gmail.com" className="btn-primary">
-          Send an email ↗
+          Send an email {<MoveUpRight size={13} />}
         </a>
       </div>
     </section>

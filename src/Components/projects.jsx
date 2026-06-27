@@ -1,4 +1,4 @@
-/* ─── PROJECTS SECTION ──────────────────────────────────────── */
+import { MoveUpRight } from "lucide-react";
 export function Projects() {
   const projects = [
     {
@@ -40,7 +40,7 @@ export function Projects() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    GitHub ↗
+                    GitHub {<MoveUpRight size={10} />}
                   </a>
                 )}
                 {project.live && (
@@ -50,7 +50,7 @@ export function Projects() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Live demo ↗
+                    Live demo {<MoveUpRight size={10} />}
                   </a>
                 )}
               </div>

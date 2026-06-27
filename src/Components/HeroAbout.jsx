@@ -1,3 +1,4 @@
+import { MoveDown } from "lucide-react";
 export function Hero() {
   return (
     <section className="hero">
@@ -7,18 +8,21 @@ export function Hero() {
       </div>
 
       <h1 className="hero-heading">
-        Hi, I'm <span className="hero-accent">MAXIII</span>.<br />I build with
-        React.
+        Hi, I'm{" "}
+        <span className="hero-accent glitch" data-text="MAXWELL">
+          MAX
+        </span>
+        .<br />I build innovative software.
       </h1>
 
       <p className="hero-sub">
-        I am a software developer specializing in building the best digital
-        experiences.
+        Second-year Cybersecurity undergrad — writing code across the stack and
+        figuring out the rest as I go.
       </p>
 
       <div className="hero-ctas">
         <a href="#projects" className="btn-primary">
-          See my work ↓
+          See my work {<MoveDown size={13} />}
         </a>
         <a href="#contact" className="btn-ghost">
           Get in touch
@@ -31,8 +35,8 @@ export function Hero() {
 /* ==== ABOUT SECTION ==== */
 export function About() {
   const stats = [
-    { num: "React", label: "primary framework" },
-    { num: "∞", label: "things still learning" },
+    { num: "Python + TypeScript", label: "languages in rotation" },
+    { num: "Cybersecurity", label: "field of study" },
   ];
 
   return (
@@ -41,9 +45,16 @@ export function About() {
       <h2 className="section-title">BIO</h2>
 
       <p className="about-text">
-        I'm a software developer who loves turning complex problems into simple,
-        elegant UIs. I care deeply about component architecture, clean code, and
-        building things that actually work well for users. I'm 6'2 btw.
+        I'm Maxwell, a second-year undergraduate studying Cybersecurity,
+        currently spending most of my time writing code and building things that
+        actually work. I'm drawn to software engineering and development — the
+        kind of work where you can see what you made — with a long-term interest
+        in cybersecurity practice and AI engineering down the line.
+        <br />
+        <br />
+        So far I've built across the stack: Python scripts, REST APIs with
+        TypeScript and Hono, and full websites from scratch. I'm still early,
+        but I ship things, I break things, and I learn fast.
       </p>
 
       <div className="about-grid">

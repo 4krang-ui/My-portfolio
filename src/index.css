@@ -1,41 +1,38 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Mono:wght@400;500&display=swap");
 
-
-
 :root {
-  --accent:       #1d9e75;
+  --accent: #1d9e75;
   --accent-light: #e1f5ee;
-  --accent-mid:   #0f6e56;
-  --fg:           #111;
-  --fg2:          #555;
-  --border:       rgba(0, 0, 0, 0.1);
-  --bg:           #ffffff;
-  --bg2:          #f7f7f5;
-  --radius-lg:    12px;
-  --radius-md:    8px;
-  --font-head:    "Syne", sans-serif;
-  --font-mono:    "DM Mono", monospace;
+  --accent-mid: #0f6e56;
+  --fg: #111;
+  --fg2: #555;
+  --border: rgba(0, 0, 0, 0.1);
+  --bg: #ffffff;
+  --bg2: #f7f7f5;
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --font-head: "Syne", sans-serif;
+  --font-mono: "DM Mono", monospace;
 }
 
 [data-theme="dark"] {
-  --accent:       #1d9e75;
+  --accent: #1d9e75;
   --accent-light: #0a2e22;
-  --accent-mid:   #5dcaa5;
-  --fg:           #f0f0ee;
-  --fg2:          #999;
-  --border:       rgba(255, 255, 255, 0.1);
-  --bg:           #111110;
-  --bg2:          #1a1a18;
+  --accent-mid: #5dcaa5;
+  --fg: #f0f0ee;
+  --fg2: #999;
+  --border: rgba(255, 255, 255, 0.1);
+  --bg: #111110;
+  --bg2: #1a1a18;
 }
-
 
 body {
   background-color: var(--bg);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
   color: var(--fg);
 }
-
 
 .hero {
   padding: 20px;
@@ -128,6 +125,94 @@ body {
   background: var(--bg2);
 }
 
+/* HERO ANIMATION */
+/* Glitch effect on MAXWELL */
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.glitch::before {
+  color: #f87171;
+  animation: glitch-top 5s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+}
+.glitch::after {
+  color: #60a5fa;
+  animation: glitch-bottom 5s infinite;
+  clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+}
+@keyframes glitch-top {
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  91% {
+    transform: translate(-3px, -1px);
+    opacity: 1;
+  }
+  93% {
+    transform: translate(3px, 1px);
+    opacity: 1;
+  }
+  95% {
+    transform: translate(-2px, 0);
+    opacity: 1;
+  }
+  97% {
+    transform: translate(0);
+    opacity: 0;
+  }
+}
+@keyframes glitch-bottom {
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  92% {
+    transform: translate(3px, 1px);
+    opacity: 1;
+  }
+  94% {
+    transform: translate(-3px, -1px);
+    opacity: 1;
+  }
+  96% {
+    transform: translate(2px, 0);
+    opacity: 1;
+  }
+  98% {
+    transform: translate(0);
+    opacity: 0;
+  }
+}
+
+/* Pulsing dot */
+.hero-tag-dot {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
 /* ─── SHARED SECTION STYLES ─────────────────────────────────── */
 .section {
   margin-bottom: 3rem;
@@ -154,10 +239,14 @@ body {
   margin-bottom: 1.25rem;
 }
 
+.theme-toggle,
+.nav-hamburger svg {
+  color: var(--fg2);
+}
 
 .about-text {
   font-family: var(--font-head);
-  font-size: 15px;
+  font-size: 16px;
   color: var(--fg2);
   line-height: 1.75;
   margin-bottom: 1.5rem;
@@ -178,8 +267,8 @@ body {
 
 .about-stat-num {
   font-family: var(--font-head);
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 24px;
+  font-weight: 750;
   color: var(--accent);
   letter-spacing: -0.03em;
   line-height: 1;
@@ -218,12 +307,10 @@ body {
 
 .skill-name {
   font-family: var(--font-head);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--fg);
 }
-
-
 
 .contact-section {
   border-bottom: none;
@@ -257,9 +344,6 @@ body {
   opacity: 0.8;
   font-weight: 400;
 }
-
-
-
 
 .navbar {
   display: flex;
@@ -302,6 +386,122 @@ body {
 
 .nav-link:hover {
   color: var(--accent);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid var(--accent);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.nav-avatar:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.nav-avatar-initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* When you add the real photo: */
+.nav-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeIn 0.2s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox-content {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--accent);
+  animation: scaleIn 0.2s ease;
+}
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lightbox-avatar-initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 80px;
+}
+
+/* When you add the real photo: */
+.lightbox-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ==== PROJECTS ==== */
@@ -392,7 +592,7 @@ body {
   border-style: dashed;
   opacity: 0.6;
 }
- 
+
 .project-empty-icon {
   width: 40px;
   height: 40px;
@@ -406,7 +606,6 @@ body {
   color: var(--fg2);
   margin-bottom: 1rem;
 }
-
 
 /* ==== THEME TOGGLE BUTTON  ==== */
 .theme-toggle {
@@ -428,6 +627,125 @@ body {
   background-color: var(--bg);
 }
 
-.socials{
-  color:#c8ae07;
+.socials {
+  color: #c8ae07;
+}
+
+.nav-hamburger {
+  display: none;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 0.5px solid var(--border);
+    padding: 1rem 16px 1.5rem;
+    gap: 18px;
+    z-index: 99;
+  }
+
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--fg);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+
+  /* Skills: 3 cols → 2 cols on mobile */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* About stats: smaller on mobile */
+  .about-stat {
+    padding: 0.75rem 1rem;
+  }
+
+  .about-stat-num {
+    font-size: 15px;
+  }
+
+  .about-stat-label {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 0.5px solid var(--border);
+    padding: 1rem 16px 1.5rem;
+    gap: 18px;
+    z-index: 99;
+  }
+
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--fg);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+
+  /* Skills: 3 cols → 2 cols on mobile */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* About stats: smaller on mobile */
+  .about-stat {
+    padding: 0.75rem 0.8rem;
+  }
+
+  .about-stat-num {
+    font-size: 15px;
+  }
+
+  .about-stat-label {
+    font-size: 10px;
+  }
 }
