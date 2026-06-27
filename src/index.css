@@ -141,12 +141,12 @@ body {
   overflow: hidden;
 }
 .glitch::before {
-  color: #f87171;
+  color: #ffff;
   animation: glitch-top 5s infinite;
-  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+  clip-path: polygon(100% 0, 100% 100%, 100% 40%, 0 40%);
 }
 .glitch::after {
-  color: #60a5fa;
+  color: #131212;
   animation: glitch-bottom 5s infinite;
   clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
 }
